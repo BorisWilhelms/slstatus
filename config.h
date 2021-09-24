@@ -7,7 +7,7 @@ const unsigned int interval = 1000;
 static const char unknown_str[] = "n/a";
 
 /* text to show as a separator */
-static const char sep[] = " | ";
+static const char sep[] = " ";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -66,12 +66,12 @@ static const char sep[] = " | ";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function     format          argument */
-	{ cpu_perc,     "💻 %s%%",      NULL },
-	{ separator,    "%s",           &sep },
-	{ battery_perc, "🔋 %s%%",     "BAT0" },
-	{ separator,    "%s",           &sep },
-	{ run_command,  "%s",           "sb-volume" },
-	{ separator,    "%s",           &sep },
-	{ datetime,     "%s",           "📅 %d.%m. 🕒 %H:%M" }
+	/* function     format              argument */
+	{ cpu_perc,     "[ 💻 %s%% ]",      NULL },
+	{ separator,    "%s",               &sep },
+	{ battery_perc, "[ 🔋 %s%% ]",     "BAT0" },
+	{ separator,    "%s",               &sep },
+	{ run_command,  "[ %s ]",           "sb-volume" },
+	{ separator,    "%s",               &sep },
+	{ datetime,     "[ %s ]",           "📅 %d.%m. 🕒 %H:%M" }
 };
