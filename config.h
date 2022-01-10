@@ -74,6 +74,8 @@ static const struct arg args[] = {
 	{ separator,    "%s",               &sep },
 	{ run_command,  "%s",               "sb-volume" },
 	{ separator,    "%s",               &sep },
+	{ run_command,  "%s",               "sb-mic" },
+	{ separator,    "%s",               &sep },
 	{ run_command,  "%s",               "backlight" },
 	{ separator,    "%s",               &sep },
 	{ datetime,     "%s",               "📅  %d.%m." },
