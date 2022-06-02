@@ -67,10 +67,10 @@ static const char sep[] = "  |  ";
  */
 static const struct arg args[] = {
 	/* function     format              argument */
-	{ cpu_perc,     "^b#6272a4^ ^c#f8f8f2^💻  ^b#44475a^ ^c#f8f8f2^%s%% ^d^", NULL },
-	{ battery_perc, "^b#6272a4^ ^c#f8f8f2^🔋  ^b#44475a^ ^c#f8f8f2^%s%% ^d^", "BAT0" },
-	{ run_command,  "^b#6272a4^ ^c#f8f8f2^🔊  ^b#44475a^ ^c#f8f8f2^%s ^d^", "sb-volume" },
-	{ run_command,  "^b#6272a4^ ^c#f8f8f2^🎤  ^b#44475a^ ^c#f8f8f2^%s ^d^", "sb-mic" },
-	{ run_command,  "^b#6272a4^ ^c#f8f8f2^💡  ^b#44475a^ ^c#f8f8f2^%s%% ^d^", "backlight" },
-	{ datetime,     "^b#6272a4^ ^c#f8f8f2^📅  ^b#44475a^ ^c#f8f8f2^%s", "%a %b %d %r  " }
+	{ cpu_perc,     "^b#6272a4^ ^c#f8f8f2^💻 ^b#44475a^ ^c#f8f8f2^%s%% ^d^", NULL },
+	{ battery_perc, "^b#6272a4^ ^c#f8f8f2^🔋 ^b#44475a^ ^c#f8f8f2^%s%% ^d^", "BAT0" },
+	{ run_command,  "^b#6272a4^ ^c#f8f8f2^🔊 ^b#44475a^ ^c#f8f8f2^%s ^d^", "sb-volume" },
+	{ run_command,  "^b#6272a4^ ^c#f8f8f2^🎤 ^b#44475a^ ^c#f8f8f2^%s ^d^", "sb-mic" },
+	{ run_command,  "^b#6272a4^ ^c#f8f8f2^💡 ^b#44475a^ ^c#f8f8f2^%s%% ^d^", "backlight" },
+	{ datetime,     "^b#6272a4^ ^c#f8f8f2^📅 ^b#44475a^ ^c#f8f8f2^%s ", "%a %d %b, %R" }
 };
