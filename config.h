@@ -67,18 +67,10 @@ static const char sep[] = "  |  ";
  */
 static const struct arg args[] = {
 	/* function     format              argument */
-	{ cpu_perc,     "💻  %s%%",         NULL },
-	{ separator,    "%s",               &sep },
-	{ battery_perc, "🔋  %s%%",         "BAT0" },
-	{ separator,    "%s",               &sep },
-	{ run_command,  "%s",               "sb-volume" },
-	{ separator,    "%s",               &sep },
-	{ run_command,  "%s",               "sb-mic" },
-	{ separator,    "%s",               &sep },
-	{ run_command,  "%s",               "backlight" },
-	{ separator,    "%s",               &sep },
-	{ datetime,     "%s",               "📅  %d.%m." },
-	{ separator,    "%s",               &sep },
-	{ datetime,     "%s",               "🕒  %H:%M" },
-	{ separator,    "%s",               &sep },
+	{ cpu_perc,     "^b#6272a4^ ^c#f8f8f2^💻  ^b#44475a^ ^c#f8f8f2^%s%% ^d^", NULL },
+	{ battery_perc, "^b#6272a4^ ^c#f8f8f2^🔋  ^b#44475a^ ^c#f8f8f2^%s%% ^d^", "BAT0" },
+	{ run_command,  "^b#6272a4^ ^c#f8f8f2^🔊  ^b#44475a^ ^c#f8f8f2^%s ^d^", "sb-volume" },
+	{ run_command,  "^b#6272a4^ ^c#f8f8f2^🎤  ^b#44475a^ ^c#f8f8f2^%s ^d^", "sb-mic" },
+	{ run_command,  "^b#6272a4^ ^c#f8f8f2^💡  ^b#44475a^ ^c#f8f8f2^%s%% ^d^", "backlight" },
+	{ datetime,     "^b#6272a4^ ^c#f8f8f2^📅  ^b#44475a^ ^c#f8f8f2^%s", "%a %b %d %r  " }
 };
