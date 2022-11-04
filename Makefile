@@ -60,8 +60,10 @@ install: all
 	mkdir -p "$(DESTDIR)$(MANPREFIX)/man1"
 	cp -f slstatus.1 "$(DESTDIR)$(MANPREFIX)/man1"
 	chmod 644 "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
+	cp -f 99-slstatus.rules /etc/udev/rules.d
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
 	rm -f "$(DESTDIR)$(PREFIX)/bin/refresh_slstatus"
+	rm -f "/etc/udev/rules.d/99-slstatus.rules"
 	rm -f "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"

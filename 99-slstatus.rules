@@ -1,0 +1,5 @@
+# refresh on backlight changes
+ACTION=="change", SUBSYSTEM=="backlight", RUN+="/usr/local/bin/refresh_slstatus"
+
+# refresh on power_supply changes
+ACTION=="change", SUBSYSTEM=="power_supply", RUN+="/usr/local/bin/refresh_slstatus"
