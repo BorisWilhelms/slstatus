@@ -67,7 +67,8 @@ static const char sep[] = "  |  ";
  */
 static const struct arg args[] = {
 	/* function     format              argument */
-	{battery_perc, "^b#44475a^^c#bd93f9^ 🔋 ^b#282a36^^c#bd93f9^ %s%% ^d^", "BAT1"},
+	{battery_state, "^b#44475a^^c#bd93f9^ %s ^b#282a36^^c#bd93f9^", "BAT1"},
+	{battery_perc, " %s%% ^d^", "BAT1"},
 	{run_command, "^b#44475a^^c#ff79c6^ 🔊 ^b#282a36^^c#ff79c6^ %s ^d^", "sb-volume"},
 	{run_command, "^b#44475a^^c#ffb86c^ 🎤 ^b#282a36^^c#ffb86c^ %s ^d^", "sb-mic"},
 	{backlight_perc, "^b#44475a^^c#50fa7b^ 💡 ^b#282a36^^c#50fa7b^ %s%% ^d^", "intel_backlight"},
