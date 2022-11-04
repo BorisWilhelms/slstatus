@@ -53,6 +53,8 @@ main(int argc, char *argv[])
 	int sflag, ret;
 	char status[MAXLEN];
 	const char *res;
+	time_t rawtime;
+	struct tm *currenttime; 
 
 	sflag = 0;
 	ARGBEGIN {
@@ -107,13 +109,20 @@ main(int argc, char *argv[])
 		}
 
 		if (!done) {
-			if (clock_gettime(CLOCK_MONOTONIC, &current) < 0)
-				die("clock_gettime:");
-			difftimespec(&diff, &current, &start);
+			if (interval >= 0) {
+				if (clock_gettime(CLOCK_MONOTONIC, &current) < 0)
+					die("clock_gettime:");
+				
+				difftimespec(&diff, &current, &start);
 
-			intspec.tv_sec = interval / 1000;
-			intspec.tv_nsec = (interval % 1000) * 1E6;
-			difftimespec(&wait, &intspec, &diff);
+				intspec.tv_sec = interval / 1000;
+				intspec.tv_nsec = (interval % 1000) * 1E6;
+				difftimespec(&wait, &intspec, &diff);
+			} else {
+				time(&rawtime);
+				currenttime = localtime(&rawtime);
+				wait.tv_sec = 60 - currenttime->tm_sec;
+			}
 
 			if (wait.tv_sec >= 0 &&
 			    nanosleep(&wait, NULL) < 0 &&
