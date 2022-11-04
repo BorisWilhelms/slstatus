@@ -46,7 +46,7 @@ clean:
 dist:
 	rm -rf "slstatus-$(VERSION)"
 	mkdir -p "slstatus-$(VERSION)/components"
-	cp -R LICENSE Makefile README config.mk \
+	cp -R LICENSE Makefile README config.mk refresh_slstatus \
 	      arg.h slstatus.c $(COM:=.c) $(REQ:=.c) $(REQ:=.h) \
 	      slstatus.1 "slstatus-$(VERSION)"
 	tar -cf - "slstatus-$(VERSION)" | gzip -c > "slstatus-$(VERSION).tar.gz"
@@ -56,10 +56,12 @@ install: all
 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
 	cp -f slstatus "$(DESTDIR)$(PREFIX)/bin"
 	chmod 755 "$(DESTDIR)$(PREFIX)/bin/slstatus"
+	cp -f refresh_slstatus "$(DESTDIR)$(PREFIX)/bin"
 	mkdir -p "$(DESTDIR)$(MANPREFIX)/man1"
 	cp -f slstatus.1 "$(DESTDIR)$(MANPREFIX)/man1"
 	chmod 644 "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
+	rm -f "$(DESTDIR)$(PREFIX)/bin/refresh_slstatus"
 	rm -f "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
