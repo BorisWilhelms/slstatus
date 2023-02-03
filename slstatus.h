@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+/* ac */
+const char *ac_online_state(const char *ac, const char *bat);
+
 /* battery */
 const char *battery_perc(const char *);
 const char *battery_state(const char *);

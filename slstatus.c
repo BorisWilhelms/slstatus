@@ -12,9 +12,10 @@
 #include "util.h"
 
 struct arg {
-	const char *(*func)(const char *);
+	const char *(*func)(const char *, const char *);
 	const char *fmt;
-	const char *args;
+	const char *arg1;
+	const char *arg2;
 };
 
 char buf[1024];
@@ -87,7 +88,7 @@ main(int argc, char *argv[])
 
 		status[0] = '\0';
 		for (i = len = 0; i < LEN(args); i++) {
-			if (!(res = args[i].func(args[i].args)))
+			if (!(res = args[i].func(args[i].arg1, args[i].arg2)))
 				res = unknown_str;
 
 			if ((ret = esnprintf(status + len, sizeof(status) - len,
